@@ -1,0 +1,2 @@
+rootProject.name='M&M Sorter'
+include ':app'
