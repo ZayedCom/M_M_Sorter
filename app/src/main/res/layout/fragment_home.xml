@@ -6,17 +6,200 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewRed"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorRed"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_red"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="20"
+            app:progressView_radius="12dp" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewYellow"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorYellow"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_yellow"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="45"
+            app:progressView_radius="12dp" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewBlue"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorBlue"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_blue"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="88"
+            app:progressView_radius="12dp" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewGreen"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorGreen"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_green"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="50"
+            app:progressView_radius="12dp" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewOrange"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorOrange"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_orange"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="75"
+            app:progressView_radius="12dp" />
+
+        <com.skydoves.progressview.ProgressView
+            android:id="@+id/progressViewBrown"
+            android:layout_width="50dp"
+            android:layout_height="350dp"
+            android:layout_margin="10dp"
+            app:progressView_autoAnimate="true"
+            app:progressView_colorBackground="@color/colorBar"
+            app:progressView_colorProgress="@color/colorBrown"
+            app:progressView_labelColorInner="@color/white"
+            app:progressView_labelColorOuter="@color/black"
+            app:progressView_labelSize="13sp"
+            app:progressView_labelSpace="10dp"
+            app:progressView_labelText="@string/color_brown"
+            app:progressView_labelTypeface="bold"
+            app:progressView_max="100"
+            app:progressView_min="15"
+            app:progressView_orientation="vertical"
+            app:progressView_padding="1dp"
+            app:progressView_progress="30"
+            app:progressView_radius="12dp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    <TextView
+        android:id="@+id/text_unidentified"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    <Button
+        android:id="@+id/buttonShowPercentages"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/button_show_percentages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    <Button
+        android:id="@+id/buttonClearData"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_clear_all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonShowPercentages"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,4 +4,13 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_about">About Us</string>
+    <string name="color_red">Red</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_green">Green</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_brown">Brown</string>
+    <string name="button_show_percentages">Show All Percentages</string>
+    <string name="button_clear_all">Clear All</string>
+    <string name="bau">Bahcesehir University</string>
 </resources>

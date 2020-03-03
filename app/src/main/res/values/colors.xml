@@ -2,5 +2,17 @@
 <resources>
     <color name="colorPrimary">#FF1744</color>
     <color name="colorPrimaryDark">#DF1744</color>
-    <color name="colorAccent">#1770FF</color>
+    <color name="colorAccent">#F21770FF</color>
+
+    <!-- m&m colors-->
+    <color name="colorBar">#1A1770FF</color>
+    <color name="colorRed">#B11224</color>
+    <color name="colorYellow">#FFF200</color>
+    <color name="colorBlue">#2F9FD7</color>
+    <color name="colorGreen">#31AC55</color>
+    <color name="colorOrange">#F26F22</color>
+    <color name="colorBrown">#603A34</color>
+
+    <!-- BAU color-->
+    <color name="colorBAU">#004F9E</color>
 </resources>
