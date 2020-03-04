@@ -10,7 +10,12 @@
     <string name="color_green">Green</string>
     <string name="color_orange">Orange</string>
     <string name="color_brown">Brown</string>
+    <string name="color_unidentified">Unidentified</string>
     <string name="button_show_percentages">Show All Percentages</string>
     <string name="button_clear_all">Clear All</string>
+    <string name="button_stop">Stop</string>
+    <string name="button_start">Start</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_stats">Stats</string>
     <string name="bau">Bahcesehir University</string>
 </resources>

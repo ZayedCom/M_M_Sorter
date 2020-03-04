@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,12 +42,12 @@ public class HomeFragment extends Fragment {
         final Button buttonShowPercentages = root.findViewById(R.id.buttonShowPercentages);
         final Button buttonClearData = root.findViewById(R.id.buttonClearData);
 
-        final ProgressView progressViewRed = root.findViewById(R.id.progressViewRed);
-        final ProgressView progressViewYellow = root.findViewById(R.id.progressViewYellow);
-        final ProgressView progressViewBlue = root.findViewById(R.id.progressViewBlue);
-        final ProgressView progressViewGreen = root.findViewById(R.id.progressViewGreen);
-        final ProgressView progressViewOrange = root.findViewById(R.id.progressViewOrange);
-        final ProgressView progressViewBrown = root.findViewById(R.id.progressViewBrown);
+        final ProgressView progressViewRed = root.findViewById(R.id.dashboardRed);
+        final ProgressView progressViewYellow = root.findViewById(R.id.dashboardYellow);
+        final ProgressView progressViewBlue = root.findViewById(R.id.dashboardBlue);
+        final ProgressView progressViewGreen = root.findViewById(R.id.dashboardGreen);
+        final ProgressView progressViewOrange = root.findViewById(R.id.dashboardOrange);
+        final ProgressView progressViewBrown = root.findViewById(R.id.dashboardBrown);
 
         redColor = progressViewRed.getProgress();
         yellowColor = progressViewYellow.getProgress();

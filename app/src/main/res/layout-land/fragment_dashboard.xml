@@ -10,16 +10,15 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardRed"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -43,8 +42,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardYellow"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -68,8 +67,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardBlue"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -93,8 +92,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardGreen"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -118,8 +117,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardOrange"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -143,8 +142,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardBrown"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -168,8 +167,8 @@
 
         <com.skydoves.progressview.ProgressView
             android:id="@+id/dashboardUnidentified"
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             app:progressView_autoAnimate="true"
             app:progressView_colorBackground="@color/colorBar"
@@ -194,27 +193,28 @@
 
     <TextView
         android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dashboard">
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
+        app:layout_constraintVertical_bias="0.389">
 
         <Button
             android:id="@+id/buttonStop"

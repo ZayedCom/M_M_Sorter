@@ -13,6 +13,7 @@
     <color name="colorGreen">#31AC55</color>
     <color name="colorOrange">#F26F22</color>
     <color name="colorBrown">#603A34</color>
+    <color name="colorUnidentified">#8C8280</color>
 
     <!-- BAU color-->
     <color name="colorBAU">#004F9E</color>

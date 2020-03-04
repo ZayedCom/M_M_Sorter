@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.38">
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewRed"
+            android:id="@+id/dashboardRed"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
@@ -38,7 +38,7 @@
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewYellow"
+            android:id="@+id/dashboardYellow"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
@@ -59,7 +59,7 @@
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewBlue"
+            android:id="@+id/dashboardBlue"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
@@ -80,7 +80,7 @@
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewGreen"
+            android:id="@+id/dashboardGreen"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
@@ -101,7 +101,7 @@
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewOrange"
+            android:id="@+id/dashboardOrange"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
@@ -122,7 +122,7 @@
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
-            android:id="@+id/progressViewBrown"
+            android:id="@+id/dashboardBrown"
             android:layout_width="50dp"
             android:layout_height="350dp"
             android:layout_margin="10dp"
