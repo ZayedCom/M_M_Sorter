@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF1744</color>
     <color name="colorPrimaryDark">#DF1744</color>
-    <color name="colorAccent">#F21770FF</color>
+    <color name="colorAccent">#004F9E</color>
 
     <!-- m&m colors-->
     <color name="colorBar">#1A1770FF</color>
