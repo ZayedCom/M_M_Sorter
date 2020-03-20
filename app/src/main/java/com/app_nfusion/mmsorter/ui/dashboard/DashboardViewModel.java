@@ -3,18 +3,14 @@ package com.app_nfusion.mmsorter.ui.dashboard;
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
-import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 import com.app_nfusion.mmsorter.R;
 
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class DashboardViewModel extends ViewModel {
