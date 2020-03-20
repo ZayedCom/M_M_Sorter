@@ -63,6 +63,7 @@ public class DashboardFragment extends Fragment {
 
     boolean startSwitch = false;
 
+    //Turn On Bluetooth
     public void turnOnBluetooth(){
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null) {
@@ -80,6 +81,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+    //Turn Off Bluetooth
     public void turnOffBluetooth(){
         if (bluetoothAdapter.isEnabled()) {
             bluetoothAdapter.disable();
@@ -87,6 +89,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+    //Refreshing the progress bar
     public void refreshScreen(){
         try {
             showPairedArduino();
@@ -102,6 +105,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+    //Connect to Arduino
     public void showPairedArduino() throws IOException {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         pairedDevices = bluetoothAdapter.getBondedDevices();
@@ -196,6 +200,7 @@ public class DashboardFragment extends Fragment {
         return root;
     }
 
+    //Connect Bluetooth
     private class ConnectBT extends AsyncTask<Void, Void, Void>  // UI thread
     {
         private boolean ConnectSuccess = true; //if it's here, it's almost connected
