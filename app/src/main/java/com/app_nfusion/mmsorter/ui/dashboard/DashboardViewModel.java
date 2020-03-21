@@ -44,6 +44,9 @@ public class DashboardViewModel extends ViewModel {
                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                             TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
                     tempTime[0] = millisUntilFinished;
+                    if (millisUntilFinished % 10 == 0) {
+                        DashboardFragment.refresh = true;
+                    }
                 }
 
                 @Override

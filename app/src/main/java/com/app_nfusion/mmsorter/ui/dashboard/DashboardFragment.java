@@ -62,6 +62,7 @@ public class DashboardFragment extends Fragment {
     ProgressView progressViewUnidentified;
 
     boolean startSwitch = false;
+    public static boolean refresh = false;
 
     //Turn On Bluetooth
     public void turnOnBluetooth(){
@@ -91,17 +92,22 @@ public class DashboardFragment extends Fragment {
 
     //Refreshing the progress bar
     public void refreshScreen(){
-        try {
-            showPairedArduino();
-            progressViewRed.setProgress(redColor);
-            progressViewGreen.setProgress(greenColor);
-            progressViewBlue.setProgress(blueColor);
-            progressViewBrown.setProgress(brownColor);
-            progressViewYellow.setProgress(yellowColor);
-            progressViewOrange.setProgress(orangeColor);
-            progressViewUnidentified.setProgress(unidentifiedColor);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (refresh == true) {
+            try {
+                showPairedArduino();
+                progressViewRed.setProgress(redColor);
+                progressViewGreen.setProgress(greenColor);
+                progressViewBlue.setProgress(blueColor);
+                progressViewBrown.setProgress(brownColor);
+                progressViewYellow.setProgress(yellowColor);
+                progressViewOrange.setProgress(orangeColor);
+                progressViewUnidentified.setProgress(unidentifiedColor);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            Log.i( "Refresh","No Update on Data");
         }
     }
 
@@ -255,32 +261,32 @@ public class DashboardFragment extends Fragment {
 
                         }
                         else if (i == 1){
-                            orangeColor = b;
-                            Log.i("ORANGE", String.valueOf(orangeColor));
-                        }
-                        else if (i == 2){
-                            unidentifiedColor = b;
-                            Log.i("UNIDENTIFIED", String.valueOf(unidentifiedColor));
-                        }
-                        else if (i == 3){
-                            redColor = b;
-                            Log.i("RED", String.valueOf(redColor));
-                        }
-                        else if (i == 4){
                             greenColor = b;
                             Log.i("GREEN", String.valueOf(greenColor));
                         }
-                        else if (i == 5){
+                        else if (i == 2){
                             blueColor = b;
                             Log.i("BLUE", String.valueOf(blueColor));
                         }
-                        else if (i == 6){
+                        else if (i == 3){
                             brownColor = b;
                             Log.i("BROWN", String.valueOf(brownColor));
                         }
-                        else{
-                             yellowColor = b;
+                        else if (i == 4){
+                            yellowColor = b;
                             Log.i("YELLOW", String.valueOf(yellowColor));
+                        }
+                        else if (i == 5){
+                            orangeColor = b;
+                            Log.i("ORANGE", String.valueOf(orangeColor));
+                        }
+                        else if (i == 6){
+                            unidentifiedColor = b;
+                            Log.i("UNIDENTIFIED", String.valueOf(unidentifiedColor));
+                        }
+                        else{
+                            redColor = b;
+                            Log.i("RED", String.valueOf(redColor));
                         }
                     }
                 } catch (IOException e) {
