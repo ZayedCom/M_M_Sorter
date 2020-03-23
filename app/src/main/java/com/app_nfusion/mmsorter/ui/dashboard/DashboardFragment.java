@@ -63,22 +63,23 @@ public class DashboardFragment extends Fragment {
 
     boolean startSwitch = false;
     public static boolean refresh = false;
+    private boolean showPercentagesSwitch = false;
 
     //Turn On Bluetooth
     public void turnOnBluetooth(){
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null) {
             // Device doesn't support Bluetooth
-            Toast.makeText(getActivity(), "Device doesn't support Bluetooth", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Device doesn't support Bluetooth", Toast.LENGTH_SHORT).show();
         }
         else if (!bluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            Toast.makeText(getActivity(), "Enabling Bluetooth", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Enabling Bluetooth", Toast.LENGTH_SHORT).show();
         }
         else {
             bluetoothAdapter.isEnabled();
-            Toast.makeText(getActivity(), "Bluetooth Already Enabled", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Bluetooth Already Enabled", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -86,7 +87,7 @@ public class DashboardFragment extends Fragment {
     public void turnOffBluetooth(){
         if (bluetoothAdapter.isEnabled()) {
             bluetoothAdapter.disable();
-            Toast.makeText(getActivity(), "Disabling Bluetooth", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Disabling Bluetooth", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -111,6 +112,30 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+    //Show Stats
+    public void showStats(){
+        if (showPercentagesSwitch == false) {
+            progressViewRed.setLabelText(String.valueOf(redColor));
+            progressViewGreen.setLabelText(String.valueOf(greenColor));
+            progressViewBlue.setLabelText(String.valueOf(blueColor));
+            progressViewBrown.setLabelText(String.valueOf(brownColor));
+            progressViewYellow.setLabelText(String.valueOf(yellowColor));
+            progressViewOrange.setLabelText(String.valueOf(orangeColor));
+            progressViewUnidentified.setLabelText(String.valueOf(unidentifiedColor));
+            showPercentagesSwitch = true;
+        }
+        else {
+            progressViewRed.setLabelText(String.valueOf("Red"));
+            progressViewYellow.setLabelText(String.valueOf("Yellow"));
+            progressViewBlue.setLabelText(String.valueOf("Blue"));
+            progressViewGreen.setLabelText(String.valueOf("Green"));
+            progressViewOrange.setLabelText(String.valueOf("Orange"));
+            progressViewBrown.setLabelText(String.valueOf("Brown"));
+            progressViewUnidentified.setLabelText(String.valueOf("Unidentified"));
+            showPercentagesSwitch = false;
+        }
+    }
+
     //Connect to Arduino
     public void showPairedArduino() throws IOException {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -122,7 +147,7 @@ public class DashboardFragment extends Fragment {
             for(BluetoothDevice bt : pairedDevices)
             {
                 if (bt.getName().equals("HC-06") && bt.getAddress().equals("98:D3:51:F9:5F:05")){
-                    Toast.makeText(getActivity(), "Connected to Arduino", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Connected to Arduino", Toast.LENGTH_SHORT).show();
                     Intent newint = getActivity().getIntent();
                     newint.getStringExtra(EXTRA_ADDRESS); //receive the address of the bluetooth device
                     new ConnectBT().execute(); //Call the class to connect
@@ -132,7 +157,7 @@ public class DashboardFragment extends Fragment {
         }
         else
         {
-            Toast.makeText(getActivity(), "No Paired Bluetooth Devices Found.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "No Paired Bluetooth Devices Found.", Toast.LENGTH_SHORT).show();
         }
         Log.i("Bluetooth List : ", String.valueOf(list));
     }
@@ -144,7 +169,7 @@ public class DashboardFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        final Button stopButton = root.findViewById(R.id.buttonStop);
+        final Button refreshButton = root.findViewById(R.id.buttonRefresh);
         final Button startButton = root.findViewById(R.id.buttonStart);
         final Button statsButton = root.findViewById(R.id.buttonStats);
 
@@ -165,21 +190,24 @@ public class DashboardFragment extends Fragment {
 
         turnOnBluetooth();
 
-        stopButton.setOnClickListener(new View.OnClickListener() {
+        refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showPercentagesSwitch = true;
+                refreshScreen();
+                showStats();
             }
         });
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (bluetoothAdapter.isEnabled()){
                 if (startSwitch == false) {
                     startTimer(textView, false);
-                    startButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_pause_white_24dp, 0, 0);
-                    startButton.setText("Pause");
-                    Toast.makeText(getActivity(), "Initiating M&M Sorter", Toast.LENGTH_LONG).show();
+                    startButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_stop_white_24dp, 0, 0);
+                    startButton.setText("Stop");
+                    Toast.makeText(getActivity(), "Initiating M&M Sorter", Toast.LENGTH_SHORT).show();
                     startSwitch = true;
                     try {
                         showPairedArduino();
@@ -187,12 +215,16 @@ public class DashboardFragment extends Fragment {
                         e.printStackTrace();
                     }
                 }
-                else if (startSwitch == true) {
+                else if (startSwitch == true){
                     startTimer(textView, true);
                     startButton.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_play_arrow_white_24dp, 0, 0);
-                    startButton.setText("Resume");
-                    Toast.makeText(getActivity(), "Pausing M&M Sorter", Toast.LENGTH_LONG).show();
+                    startButton.setText("Start");
+                    Toast.makeText(getActivity(), "Stopping M&M Sorter", Toast.LENGTH_SHORT).show();
                     startSwitch = false;
+                }
+            }
+                else{
+                    turnOnBluetooth();
                 }
             }
         });
@@ -200,6 +232,7 @@ public class DashboardFragment extends Fragment {
         statsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showStats();
             }
         });
 
@@ -214,7 +247,7 @@ public class DashboardFragment extends Fragment {
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(getActivity(), "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(getActivity(), "Connecting...", "Please wait!");  //show a progress dialog
         }
 
         @Override
@@ -263,30 +296,37 @@ public class DashboardFragment extends Fragment {
                         else if (i == 1){
                             greenColor = b;
                             Log.i("GREEN", String.valueOf(greenColor));
+                            progressViewGreen.setProgress(greenColor);
                         }
                         else if (i == 2){
                             blueColor = b;
                             Log.i("BLUE", String.valueOf(blueColor));
+                            progressViewBlue.setProgress(blueColor);
                         }
                         else if (i == 3){
                             brownColor = b;
                             Log.i("BROWN", String.valueOf(brownColor));
+                            progressViewBrown.setProgress(brownColor);
                         }
                         else if (i == 4){
                             yellowColor = b;
                             Log.i("YELLOW", String.valueOf(yellowColor));
+                            progressViewYellow.setProgress(yellowColor);
                         }
                         else if (i == 5){
                             orangeColor = b;
                             Log.i("ORANGE", String.valueOf(orangeColor));
+                            progressViewOrange.setProgress(orangeColor);
                         }
                         else if (i == 6){
                             unidentifiedColor = b;
                             Log.i("UNIDENTIFIED", String.valueOf(unidentifiedColor));
+                            progressViewUnidentified.setProgress(unidentifiedColor);
                         }
                         else{
                             redColor = b;
                             Log.i("RED", String.valueOf(redColor));
+                            progressViewRed.setProgress(redColor);
                         }
                     }
                 } catch (IOException e) {

@@ -16,8 +16,8 @@ public class HomeViewModel extends ViewModel {
         mTextUnidentified = new MutableLiveData<>();
 
         mText.setValue("Chart of Total M&M's Detected");
-        mTextTotal.setValue("Total : 92");
-        mTextUnidentified.setValue("Unidentified : 2");
+        mTextTotal.setValue("Total : 00");
+        mTextUnidentified.setValue("Unidentified : 0");
     }
 
     public LiveData<String> getText() {

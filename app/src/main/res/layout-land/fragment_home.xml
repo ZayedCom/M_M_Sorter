@@ -31,10 +31,10 @@
             app:progressView_labelText="@string/color_red"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="20"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -52,10 +52,10 @@
             app:progressView_labelText="@string/color_yellow"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="45"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -73,10 +73,10 @@
             app:progressView_labelText="@string/color_blue"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="88"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -94,10 +94,10 @@
             app:progressView_labelText="@string/color_green"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="50"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -115,10 +115,10 @@
             app:progressView_labelText="@string/color_orange"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="75"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -136,10 +136,10 @@
             app:progressView_labelText="@string/color_brown"
             app:progressView_labelTypeface="bold"
             app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_min="0"
             app:progressView_orientation="vertical"
             app:progressView_padding="1dp"
-            app:progressView_progress="30"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
     </LinearLayout>
 

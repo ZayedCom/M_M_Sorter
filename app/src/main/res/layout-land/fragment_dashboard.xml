@@ -33,11 +33,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_red"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="20"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -58,11 +58,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_yellow"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="45"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -83,11 +83,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_blue"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="88"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -108,11 +108,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_green"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="50"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -133,11 +133,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_orange"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="75"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -158,11 +158,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_brown"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="30"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
 
         <com.skydoves.progressview.ProgressView
@@ -183,11 +183,11 @@
             app:progressView_labelSpace="10dp"
             app:progressView_labelText="@string/color_unidentified"
             app:progressView_labelTypeface="bold"
-            app:progressView_max="100"
-            app:progressView_min="15"
+            app:progressView_max="128"
+            app:progressView_min="0"
             app:progressView_orientation="horizontal"
             app:progressView_padding="1dp"
-            app:progressView_progress="30"
+            app:progressView_progress="0"
             app:progressView_radius="12dp" />
     </LinearLayout>
 
@@ -217,13 +217,13 @@
         app:layout_constraintVertical_bias="0.389">
 
         <Button
-            android:id="@+id/buttonStop"
+            android:id="@+id/buttonRefresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/button"
-            android:drawableTop="@drawable/ic_stop_white_24dp"
-            android:text="@string/button_stop"
+            android:drawableTop="@drawable/ic_refresh_white_24dp"
+            android:text="@string/button_refresh"
             android:textColor="@color/white" />
 
         <Button
