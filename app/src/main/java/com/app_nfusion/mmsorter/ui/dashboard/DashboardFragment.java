@@ -31,6 +31,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import static com.app_nfusion.mmsorter.ui.dashboard.DashboardViewModel.startTimer;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.savedColors;
 
 public class DashboardFragment extends Fragment {
 
@@ -93,22 +94,26 @@ public class DashboardFragment extends Fragment {
 
     //Refreshing the progress bar
     public void refreshScreen(){
-        if (refresh == true) {
-            try {
-                showPairedArduino();
-                progressViewRed.setProgress(redColor);
-                progressViewGreen.setProgress(greenColor);
-                progressViewBlue.setProgress(blueColor);
-                progressViewBrown.setProgress(brownColor);
-                progressViewYellow.setProgress(yellowColor);
-                progressViewOrange.setProgress(orangeColor);
-                progressViewUnidentified.setProgress(unidentifiedColor);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if (startSwitch == true) {
+            if (refresh == true) {
+                try {
+                    showPairedArduino();
+                    progressViewRed.setProgress(redColor);
+                    progressViewGreen.setProgress(greenColor);
+                    progressViewBlue.setProgress(blueColor);
+                    progressViewBrown.setProgress(brownColor);
+                    progressViewYellow.setProgress(yellowColor);
+                    progressViewOrange.setProgress(orangeColor);
+                    progressViewUnidentified.setProgress(unidentifiedColor);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Log.i("Refresh", "No Update on Data");
             }
         }
-        else{
-            Log.i( "Refresh","No Update on Data");
+        else if (startSwitch == false){
+            Toast.makeText(getActivity(), "Not Connected to Arduino", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -221,6 +226,18 @@ public class DashboardFragment extends Fragment {
                     startButton.setText("Start");
                     Toast.makeText(getActivity(), "Stopping M&M Sorter", Toast.LENGTH_SHORT).show();
                     startSwitch = false;
+
+                    savedColors.clear();
+
+                    savedColors.add(0, redColor);
+                    savedColors.add(1, yellowColor);
+                    savedColors.add(2, blueColor);
+                    savedColors.add(3, greenColor);
+                    savedColors.add(4, orangeColor);
+                    savedColors.add(5, brownColor);
+                    savedColors.add(6, unidentifiedColor);
+
+                    Log.i("Saved Values", String.valueOf(savedColors));
                 }
             }
                 else{

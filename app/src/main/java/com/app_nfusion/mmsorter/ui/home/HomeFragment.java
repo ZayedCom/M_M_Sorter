@@ -1,6 +1,7 @@
 package com.app_nfusion.mmsorter.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,15 @@ import androidx.lifecycle.ViewModelProviders;
 import com.app_nfusion.mmsorter.R;
 import com.skydoves.progressview.ProgressView;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
     private boolean showPercentagesSwitch = false;
+
+    static public ArrayList<Float> savedColors = new ArrayList<>();
 
     private float redColor;
     private float yellowColor;
@@ -28,6 +33,62 @@ public class HomeFragment extends Fragment {
     private float greenColor;
     private float orangeColor;
     private float brownColor;
+
+    static public float unidentifiedColor;
+    static public float totalNumber;
+
+    ProgressView progressViewRed;
+    ProgressView progressViewYellow;
+    ProgressView progressViewBlue;
+    ProgressView progressViewGreen;
+    ProgressView progressViewOrange;
+    ProgressView progressViewBrown;
+
+    public void calculatePercentages(){
+        if (savedColors.isEmpty()) {
+            savedColors.add(0, (float) 0);
+            savedColors.add(1, (float) 0);
+            savedColors.add(2, (float) 0);
+            savedColors.add(3, (float) 0);
+            savedColors.add(4, (float) 0);
+            savedColors.add(5, (float) 0);
+            savedColors.add(6, (float) 0);
+        }
+        else {
+            redColor = savedColors.get(0);
+            yellowColor = savedColors.get(1);
+            blueColor = savedColors.get(2);
+            greenColor = savedColors.get(3);
+            orangeColor = savedColors.get(4);
+            brownColor = savedColors.get(5);
+            unidentifiedColor = savedColors.get(6);
+
+            totalNumber = redColor + yellowColor + brownColor + greenColor + orangeColor + brownColor;
+            Log.i("Total : ", String.valueOf(totalNumber));
+
+            redColor = (redColor * 100)/128;
+            yellowColor = (yellowColor * 100)/128;
+            blueColor = (blueColor * 100)/128;
+            greenColor = (greenColor * 100)/128;
+            orangeColor = (orangeColor * 100)/128;
+            brownColor = (brownColor * 100)/128;
+
+            Log.i("RED", String.valueOf(redColor));
+            Log.i("YELLOW", String.valueOf(yellowColor));
+            Log.i("BLUE", String.valueOf(blueColor));
+            Log.i("GREEN", String.valueOf(greenColor));
+            Log.i("ORANGE", String.valueOf(orangeColor));
+            Log.i("BROWN", String.valueOf(brownColor));
+            Log.i("UNIDENTIFIED", String.valueOf(unidentifiedColor));
+
+            progressViewRed.setProgress(redColor);
+            progressViewYellow.setProgress(yellowColor);
+            progressViewBlue.setProgress(blueColor);
+            progressViewGreen.setProgress(greenColor);
+            progressViewOrange.setProgress(orangeColor);
+            progressViewBrown.setProgress(brownColor);
+        }
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,19 +103,14 @@ public class HomeFragment extends Fragment {
         final Button buttonShowPercentages = root.findViewById(R.id.buttonShowPercentages);
         final Button buttonClearData = root.findViewById(R.id.buttonClearData);
 
-        final ProgressView progressViewRed = root.findViewById(R.id.dashboardRed);
-        final ProgressView progressViewYellow = root.findViewById(R.id.dashboardYellow);
-        final ProgressView progressViewBlue = root.findViewById(R.id.dashboardBlue);
-        final ProgressView progressViewGreen = root.findViewById(R.id.dashboardGreen);
-        final ProgressView progressViewOrange = root.findViewById(R.id.dashboardOrange);
-        final ProgressView progressViewBrown = root.findViewById(R.id.dashboardBrown);
+        progressViewRed = root.findViewById(R.id.dashboardRed);
+        progressViewYellow = root.findViewById(R.id.dashboardYellow);
+        progressViewBlue = root.findViewById(R.id.dashboardBlue);
+        progressViewGreen = root.findViewById(R.id.dashboardGreen);
+        progressViewOrange = root.findViewById(R.id.dashboardOrange);
+        progressViewBrown = root.findViewById(R.id.dashboardBrown);
 
-        redColor = progressViewRed.getProgress();
-        yellowColor = progressViewYellow.getProgress();
-        blueColor = progressViewBlue.getProgress();
-        greenColor = progressViewGreen.getProgress();
-        orangeColor = progressViewOrange.getProgress();
-        brownColor = progressViewBrown.getProgress();
+        calculatePercentages();
 
         buttonShowPercentages.setOnClickListener(new View.OnClickListener() {
             @Override
