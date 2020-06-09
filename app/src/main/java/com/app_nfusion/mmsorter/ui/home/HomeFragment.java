@@ -27,12 +27,12 @@ public class HomeFragment extends Fragment {
 
     static public ArrayList<Float> savedColors = new ArrayList<>();
 
-    private float redColor;
-    private float yellowColor;
-    private float blueColor;
-    private float greenColor;
-    private float orangeColor;
-    private float brownColor;
+    static public float redColor;
+    static public float yellowColor;
+    static public float blueColor;
+    static public float greenColor;
+    static public float orangeColor;
+    static public float brownColor;
 
     static public float unidentifiedColor;
     static public float totalNumber;

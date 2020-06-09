@@ -31,7 +31,14 @@ import java.util.Set;
 import java.util.UUID;
 
 import static com.app_nfusion.mmsorter.ui.dashboard.DashboardViewModel.startTimer;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.blueColor;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.brownColor;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.greenColor;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.orangeColor;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.redColor;
 import static com.app_nfusion.mmsorter.ui.home.HomeFragment.savedColors;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.unidentifiedColor;
+import static com.app_nfusion.mmsorter.ui.home.HomeFragment.yellowColor;
 
 public class DashboardFragment extends Fragment {
 
@@ -43,16 +50,10 @@ public class DashboardFragment extends Fragment {
     private Set<BluetoothDevice> pairedDevices;
     private ProgressDialog progress;
     private boolean isBtConnected = false;
-    public static String EXTRA_ADDRESS = "98:D3:51:F9:5F:05";
+    public static String EXTRA_ADDRESS;
+    public static String EXTRA_ADDRESS_HC05 = "98:D3:71:F5:C2:DC";
+    public static String EXTRA_ADDRESS_HC06 = "98:D3:51:F9:5F:05";
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-
-    private float redColor;
-    private float yellowColor;
-    private float blueColor;
-    private float greenColor;
-    private float orangeColor;
-    private float brownColor;
-    private float unidentifiedColor;
 
     ProgressView progressViewRed;
     ProgressView progressViewYellow;
@@ -151,9 +152,10 @@ public class DashboardFragment extends Fragment {
         {
             for(BluetoothDevice bt : pairedDevices)
             {
-                if (bt.getName().equals("HC-06") && bt.getAddress().equals("98:D3:51:F9:5F:05")){
+                if (bt.getName().equals("HC-05") && bt.getAddress().equals(EXTRA_ADDRESS_HC05)){
                     Toast.makeText(getActivity(), "Connected to Arduino", Toast.LENGTH_SHORT).show();
                     Intent newint = getActivity().getIntent();
+                    EXTRA_ADDRESS = EXTRA_ADDRESS_HC05;
                     newint.getStringExtra(EXTRA_ADDRESS); //receive the address of the bluetooth device
                     new ConnectBT().execute(); //Call the class to connect
                 }
