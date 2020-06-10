@@ -6,9 +6,14 @@ Version 1.0
 A system will be built to count and sort M&M's according to their color. The user put the 100 grams of M&M in the designated input area of the machine. The M&M goes through the mechanism to the designated area under the sensor. The sensor analyzes the color. The algorithm sends signals to motor so it will drop it into the suitable container. The display shows the number of M&M of each color.
 
 This project is an open source project.
+
+Google Play link for the mobile client
+
+https://play.google.com/store/apps/details?id=com.app_nfusion.mmsorter
  
- The link bellow contain the repository of the color sensor and the motors.
+The link bellow contain the repository of the color sensor and the motors.
 
 https://github.com/ZayedCom/M-M-Sorter
 
 Bahçeşehir University 2020
+
