@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/navigation_about"
         android:name="com.app_nfusion.mmsorter.ui.about.AboutFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_about"
         tools:layout="@layout/fragment_about" />
 </navigation>
